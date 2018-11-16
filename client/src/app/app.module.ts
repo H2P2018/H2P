@@ -6,19 +6,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '../../node_modules/@angular/router';
 import { routes } from './routes';
+import { DispositivosComponent } from './dispositivos/dispositivos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    DispositivosComponent,
 
   ],
   imports: [
     BrowserModule,
     ClarityModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
