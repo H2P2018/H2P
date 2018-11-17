@@ -21,12 +21,11 @@ conn.connect(
         else {
             console.log("Connection established.");
             readData();
-            queryDatabase();
         }   
     });
 
 function readData(){
-        conn.query('SELECT * FROM users', 
+        conn.query('UPDATE users_disp set v2=0',
             function (err, results, fields) {
                 if (err) throw err;
                 else console.log('Selected ' + results.length + ' row(s).');
@@ -44,7 +43,7 @@ function readData(){
 
 function queryDatabase(){
  
-  conn.query('INSERT INTO users (name, quantity) VALUES (?, ?);', ['banana', 150], 
+  conn.query('INSERT INTO inventory (name, quantity) VALUES (?, ?);', ['banana', 150], 
        function (err, results, fields) {
            if (err) throw err;
        else console.log('Inserted ' + results.affectedRows + ' row(s).');
