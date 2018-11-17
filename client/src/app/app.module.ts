@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '../../node_modules/@angular/router';
 import { routes } from './routes';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
 
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     ClarityModule,
     BrowserAnimationsModule,

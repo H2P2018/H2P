@@ -1,19 +1,64 @@
 <div class="container">
   <div class="title">
-    <p>Selecciona Hogar</p> 
-    <clr-dropdown-menu class="dropdown-icon-fix" clrPosition="bottom-right" *clrIfOpen>
-        <a clrDropdownItem>
-          <clr-icon shape="users"></clr-icon>
-          User
-        </a>
-        <a clrDropdownItem>
-          <clr-icon shape="flag"></clr-icon>
-          Language
-        </a>
-        <a  clrDropdownItem>
-          <clr-icon shape="logout"></clr-icon>
-          Log out
-        </a>
+    <p class="title-p">Selecciona Hogar</p>
+    <clr-dropdown class="margin-top">
+      <button type="button" class="btn btn-outline-primary" clrDropdownTrigger>
+        Hogar
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu clrPosition="bottom-left" *clrIfOpen>
+        <button type="button" clrDropdownItem>Angel Laguillo Nº1</button>
+        <hr />
+        <button type="button" clrDropdownItem>Calle Alejendria Nº24</button>
       </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
+
+  <!-- *ngFor= "let device of devices" -->
+  <div class="devices">
+    <div>
+      <label class="device">TELEFONO :</label>
+    </div>
+    <div>
+      Distancia <input type="number">
+    </div>
+    <div>
+      <clr-dropdown class="margin-top" style="width:20px">
+        <button type="button" class="btn btn-outline-primary btn-sm" clrDropdownTrigger>
+         Estado
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+          <button type="button" clrDropdownItem>Apagado</button>
+          <hr />
+          <button type="button" clrDropdownItem>Encendido</button>
+          <hr />
+          <button type="button" clrDropdownItem>Dependiente de la distancia</button>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+    <div class="delete">
+    <button type="button" class="btn btn-icon btn-danger">
+       <i class="far fa-times-circle"></i>
+    </button>
+  </div>
+  </div>
+  <div class="add">
+      <button class="btn btn-success-outline btn-sm" (click)="openN()">Añadir Dispositivo</button>
+     <clr-wizard #wizard clrWizardSize="md" [(clrWizardOpen)]="open" (clrWizardOnFinish)="doFinish()"
+    (clrWizardOnCancel)="doFinish()">
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button (click)="finish()" [type]="'finish'">OK</clr-wizard-button>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Añadir Dispositivo</ng-template>
+        <div class="form-group">
+            <label for="formFields_3" style="width:10px">Nombre:</label>
+            <input #stepFourInput type="text" id="formFields_3" placeholder="Nombre"
+                [(ngModel)]="model.nombre">
+        </div>
+    </clr-wizard-page>
+</clr-wizard>
   </div>
 </div>

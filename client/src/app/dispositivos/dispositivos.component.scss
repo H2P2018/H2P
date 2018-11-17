@@ -1,0 +1,45 @@
+.title-p{
+     font-weight: 900;
+     font-size: 20px;
+}
+
+.margin-top{
+     margin-top:0px;
+}
+
+.devices{
+     margin-top:40px;
+     display:flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-self:flex-start;
+}
+
+.delete{
+     margin-left:80px;
+     margin-top: -5px;
+}
+
+.button{
+     width:20px;
+}
+
+.sizeW{
+     width:10px;
+}
+
+
+input{
+     width:30px;
+     margin: 0 5px;
+}
+
+.device{
+     font-weight: 900;
+     margin-right: 15px;
+}
+
+
+.clr-wizard-stepnav-wrapper{
+     width:40%;
+}

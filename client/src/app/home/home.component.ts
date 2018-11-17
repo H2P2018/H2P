@@ -9,7 +9,7 @@ import {GraphService} from '../services/graph.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor( public graphService: GraphService,) { }
+  constructor( public graphService: GraphService) { }
 
   consumoActual:any;
 
